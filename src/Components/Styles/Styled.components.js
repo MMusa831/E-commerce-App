@@ -37,9 +37,16 @@ export const Language = styled.span`
 export const Center = styled.div`
    flex: 1;
    align-items: center; 
-
 `;
 
 export const Right = styled.div`
    flex: 1;
+   display: flex;  
+   align-items: center;  
+   justify-content: flex-end;
+`;
+export const MenuItem = styled.div`
+   font-size: 14px;
+   cursur: pointer;
+   margin-left: 25px;
 `;

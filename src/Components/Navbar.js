@@ -1,6 +1,6 @@
-import { Search } from '@material-ui/icons';
-import React from 'react';
-import { Center, Container, Logo, Left, Right, Wrapper, SearchContainer, Input, Language } from './Styles/Styled.components';
+import { Badge } from '@material-ui/core';
+import { Search, ShoppingCartOutlined } from '@material-ui/icons';
+import { Center, Container, Logo, Left, Right, Wrapper, SearchContainer, Input, Language, MenuItem } from './Styles/Styled.components';
 
 const Navbar = () => {
   return (
@@ -10,7 +10,7 @@ const Navbar = () => {
             <Language>EN</Language>   
             <SearchContainer>
              <Input />
-             <Search/>
+             <Search style = {{color: 'gray', fontSize: "16px"}}/>
             </SearchContainer>
             </Left>
             <Center>
@@ -18,7 +18,15 @@ const Navbar = () => {
                     E-commerce
                 </Logo>
             </Center>
-            <Right>Right</Right>
+            <Right>
+              <MenuItem>REGISTER</MenuItem>
+              <MenuItem>SIGN IN</MenuItem>
+              <MenuItem>
+                <Badge badgeContent={4} color="secondary">
+                  <ShoppingCartOutlined />
+                </Badge>                
+              </MenuItem>
+            </Right>
         </Wrapper> 
     </Container>
   )
