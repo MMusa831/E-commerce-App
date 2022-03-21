@@ -1,6 +1,6 @@
 import { ArrowBackIosOutlined, ArrowForwardIosOutlined } from "@material-ui/icons"
 import styled from "styled-components"
-import { SliderItems } from "../imageData";
+import { SliderItems } from "../data";
 import { useState } from "react";
 
 const Container = styled.div`
@@ -78,9 +78,9 @@ const Button = styled.button`
 
 const Slider = () => {
 
- const [ slideIndex, setSlideIndex ] = useState(0); 
+  const [ slideIndex, setSlideIndex ] = useState(0); 
 
-const handleClick = (direction) => {
+  const handleClick = (direction) => {
   
   if(direction === "left") {
      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2)
@@ -95,7 +95,7 @@ const handleClick = (direction) => {
         </Arrow>
         <Wrapper slideIndex = {slideIndex}>
           {SliderItems.map((item) => (
-          <Slide bg ={item.bg}>
+          <Slide bg ={item.bg} key={item.id} >
           <ImgContainer>
             <Image src={item.img} />
           </ImgContainer>
